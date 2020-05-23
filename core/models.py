@@ -7,7 +7,9 @@ from django.shortcuts import reverse
 CATEGORY_CHOICES=(
     ('S','Shirt'),
      ('SW','Sport wear'),
-      ('OW','Out wear')
+      ('OW','Out wear'),
+      ('P','Phones'),
+      ('E','Electronics'),
 )
 
 LABEL_CHOICES=(
