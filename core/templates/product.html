@@ -120,10 +120,16 @@
             </div>
 
             <p class="lead">
-              <span class="mr-1">
-                <del>Ksh200</del>
+            
+               {% if object.discount_price %}
+               <span class="mr-1">
+                <del>Ksh{{object.price}}</del>
               </span>
-              <span>Ksh{{object.price}}</span>
+               <span>Ksh{{object.discount_price}}</span>
+                  
+                  {% else %}
+                  <span>Kshs{{object.price}}</span>
+                  {% endif %}
             </p>
 
             <p class="lead font-weight-bold">Description</p>
