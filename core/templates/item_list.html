@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+  {% block content  %}
+   <h2>Here is a list of items</h2>
+   {% for item in items %}
+   <li>
+     Item: {{item.title}}
+       Price:{{item.price}}
+   </li>
+     
+   {% endfor %}
+    {% endblock content %}
