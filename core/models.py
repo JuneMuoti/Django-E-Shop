@@ -26,16 +26,28 @@ class Item(models.Model):
     label=models.CharField(choices=LABEL_CHOICES,max_length=1 ,default='P ')
     description=models.TextField()
     slug=models.SlugField()
+   
+
     def __str__(self):
         return self.title
     def get_absolute_url(self):
         
         return reverse("core:product", kwargs={'slug': self.slug})
-
+    def get_add_to_cart_url(self):
+        return reverse("core:add_to_cart", kwargs={'slug': self.slug})
+    def get_remove_from_cart_url(self):
+        return reverse("core:remove_from_cart", kwargs={'slug': self.slug})
+        
 
 class OrderItem(models.Model):
     item=models.ForeignKey(Item,on_delete=models.CASCADE)
+    quantity=models.IntegerField(default=1)
+    user=models.ForeignKey(settings.AUTH_USER_MODEL,
+            on_delete=models.CASCADE)
+    ordered=models.BooleanField(default=False)
 
+    def  __str__(self):
+        return "{} of {}.".format(self.quantity,self.item.title)
 class Order(models.Model):
     
     user=models.ForeignKey(settings.AUTH_USER_MODEL,
