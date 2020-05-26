@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'core',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -57,6 +58,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
    
 )
+SITE_ID = 1
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -64,7 +66,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-SITE_ID = 1
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -73,6 +75,11 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
+LOGIN_REDIRECT_URL="/"
+
 
 DATABASES = {
     "default": {
