@@ -49,7 +49,7 @@ mistune==0.7.3
 nbconvert==4.2.0
 nbformat==4.2.0
 numexpr==2.6.1
-numpy==1.12.1
+numpy==1.21.0
 numpydoc==0.6.0
 oauth==1.0.1
 oauthlib==3.1.0
