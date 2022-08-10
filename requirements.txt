@@ -46,7 +46,7 @@ Mako==1.0.6
 MarkupSafe==1.0
 matplotlib==2.0.0
 mistune==0.7.3
-nbconvert==4.2.0
+nbconvert==6.3.0
 nbformat==4.2.0
 numexpr==2.6.1
 numpy==1.12.1
